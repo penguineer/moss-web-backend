@@ -37,6 +37,23 @@ dotenv ./mvnw mn:run
 Note that `.env` is part of the `.gitignore` and can be safely stored in the local working copy.
 
 
+## Build
+
+The build is split into two stages:
+1. Packaging with [Maven](https://maven.apache.org/)
+2. Building the Docker container
+
+You can execute both stages with the following commands:
+
+```bash
+mvn --batch-mode --update-snapshots clean package
+docker build .
+```
+
+It is important to note that the Dockerfile is designed to expect exactly one JAR file in the `target` directory.
+Therefore, ensure that the Maven packaging process is completed successfully before proceeding to build the 
+Docker container.
+
 ## Maintainers
 
 * Stefan Haun ([@penguineer](https://github.com/penguineer))

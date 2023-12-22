@@ -1,0 +1,22 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:moss}
+    username: ${MYSQL_USER:moss}
+    password: ${MYSQL_PASS}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: true
+
+auth:
+  callback-base-url: ${OAUTH_CALLBACK_BASE_URI:http://localhost:8080/}
+  clients:
+    github:
+      client-id: ${GITHUB_OAUTH_CLIENT_ID}
+      client-secret: ${GITHUB_OAUTH_CLIENT_SECRET}
+
+webapp-base-url: ${WEBAPP_BASE_URI:http://localhost:3000}
