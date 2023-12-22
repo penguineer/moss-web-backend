@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>com.penguineering.moss</groupId>
 	<artifactId>moss-web-backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<!-- The project version is set by jgitver! -->
+	<version>0</version>
 	<name>moss-web-backend</name>
 	<description>MOSS Web Backend</description>
 	<properties>
