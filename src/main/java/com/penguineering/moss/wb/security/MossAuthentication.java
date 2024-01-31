@@ -5,12 +5,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
-class MossAuthentication implements Authentication {
+public class MossAuthentication implements Authentication {
     private final MossUserDTO user;
 
     public MossAuthentication(MossUserDTO user) {
@@ -54,5 +51,9 @@ class MossAuthentication implements Authentication {
     @Override
     public String getName() {
         return user.displayName();
+    }
+
+    public UUID getUserId() {
+        return user.id();
     }
 }
