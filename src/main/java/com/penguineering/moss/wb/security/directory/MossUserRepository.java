@@ -6,4 +6,5 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import java.util.UUID;
 
 public interface MossUserRepository extends CrudRepository<MossUserEntity, UUID> {
+    MossUserEntity getOne(UUID uuid);
 }
